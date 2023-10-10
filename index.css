@@ -1,12 +1,88 @@
 body{
-    text-align: center;
     background-color:beige;
-    padding-top: 50px;
+    text-align: center;
 }
 
 .heading{
-    text-align: center;
     color: darkgreen;
     font-family:Century Gothic;
-   
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top:50px;
+}
+
+.head1{
+    font-family: Century Gothic;
+    font-weight: bold;
+    padding-right: 10px;
+    font-size: x-large;
+}
+
+.p1name{
+    font-family: Century Gothic;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.p1count{
+    font-family: Century Gothic;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#p1roll{
+    font-family: Century Gothic;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    border-color: green;
+    height: 30px;
+    width: 80px;
+}
+
+.p2name{
+    font-family: Century Gothic;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+.p2count{
+    font-family: Century Gothic;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+#p2roll{
+    font-family: Century Gothic;
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    border-color: green;
+    height: 30px;
+    width: 80px;
+}
+
+.maindiv{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.dice{
+    font-family: Century Gothic;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-bottom: 20px;
+}
+
+#reset{
+    font-family: Century Gothic;
+    font-weight: bold;
+    color: white;
+    background-color:darksalmon;
+    border-color:darksalmon;
+    height: 30px;
+    width: 80px;
+    margin-top: 100px;
 }
