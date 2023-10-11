@@ -2,9 +2,24 @@ function startgame(){
         score1 = 0;
         score2 = 0;
         // playing = true;
-        activePlayer = 0;
+        activePlayer = Math.round(Math.random());
+        console.log(activePlayer);
+        if(activePlayer == 0){
+            return switchplayer
+          // document.getElementById("p1roll").disabled = true;
+          // document.getElementById("p2roll").disabled = false;
+          // p1roll.style.backgroundColor = "grey"
+          // p2roll.style.backgroundColor = "green"
+        }
+        // else{
+        //   console.log(activePlayer)
+        //   document.getElementById("p2roll").disabled = true;
+        //   document.getElementById("p1roll").disabled = false;
+        //   p2roll.style.backgroundColor = "grey"
+        //   p1roll.style.backgroundColor = "green"
+        // }
 }
-startgame();
+
 
 function initial(){
   score1 = 0;
@@ -13,22 +28,26 @@ function initial(){
   activePlayer = 0;
   p1count.innerHTML = '0';
   p2count.innerHTML = '0';
+  
 }
 
 function roll1(){
-  if(score1 <= 30){
+  if(score1 == 30 || score1 >=30){
+    console.log(`player1 is win`)
+    // alert("player1 is win")
+    dice.innerHTML = "player1 is win"
+    document.getElementById("p1roll").disabled = true;
+    document.getElementById("p2roll").disabled = true;
+  }
+ else{
                   value = Math.floor(Math.floor((Math.random()*6)+1));
                   dice.innerHTML = `<img id="dice1" src="dice${value}.png" alt="dice1">`
                    score1 = score1 + value
                    p1count.innerHTML = score1
                    console.log(`player1 score is ${score1}`)
                    console.log("player-2 is active")
+                   switchplayer();
   }
-  else{
-    console.log(`player1 is win`)
-    alert("player1 is win")
-  }
-  switchplayer();
 }
 function roll2(){
   if(score2 <= 30){
@@ -38,13 +57,16 @@ function roll2(){
     p2count.innerHTML = score2
     console.log(`player2 score is ${score2}`)
     console.log("player-1 is active")
-    
+    switchplayer();
 }
 else{
   console.log(`player2 is win`)
-  alert("player2 is win")
+  // alert("player2 is win")
+  dice.innerHTML = "player2 is win"
+  document.getElementById("p1roll").disabled = true;
+  document.getElementById("p2roll").disabled = true;
 }
-switchplayer();
+
 }
 
 function switchplayer(){
@@ -54,6 +76,7 @@ function switchplayer(){
             document.getElementById("p2roll").disabled = false;
             p1roll.style.backgroundColor = "grey"
             p2roll.style.backgroundColor = "green"
+            playname.innerHTML = "Player-2"
           }
           else {
             activePlayer = 0
@@ -61,6 +84,7 @@ function switchplayer(){
             document.getElementById("p1roll").disabled = false;
             p2roll.style.backgroundColor = "grey"
             p1roll.style.backgroundColor = "green"
+            playname.innerHTML = "Player-1"
 
           }
 
@@ -142,5 +166,7 @@ reset.addEventListener("click",initial);
 maindiv.append(div1,dice,div2)
 headdiv.append(playname,toplay);
 document.body.append(newdiv,headdiv,maindiv,reset);
+
+startgame();
 
 
