@@ -36,7 +36,6 @@ body{
     font-weight: bold;
     color: white;
     background-color: green;
-    border-color: green;
     height: 30px;
     width: 80px;
 }
@@ -59,7 +58,6 @@ body{
     font-weight: bold;
     color: white;
     background-color: green;
-    border-color: green;
     height: 30px;
     width: 80px;
 }
@@ -89,4 +87,12 @@ body{
     margin-top: 100px;
 }
 
+
+.winner{
+    font-family: Century Gothic;
+    font-weight: bold;
+    color: green;
+    padding-right: 10px;
+    font-size: xx-large; 
+}
 
